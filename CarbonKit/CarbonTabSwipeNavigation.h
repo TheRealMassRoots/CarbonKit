@@ -138,6 +138,19 @@ NS_ASSUME_NONNULL_BEGIN
  *  Create CarbonTabSwipeNavigation with items
  *
  *  @param items Array of items
+ *	@param initialIndex Index of initial view controller to be displayed
+ *  @param target Delegate target object
+ *
+ *  @return CarbonTabSwipeNavigation instance
+ */
+- (instancetype)initWithItems:(nullable NSArray *)items
+				 initialIndex:(NSInteger)initialIndex
+					 delegate:(nonnull id)target;
+
+/**
+ *  Create CarbonTabSwipeNavigation with items
+ *
+ *  @param items Array of items
  *  @param toolBar Tool bar for Menu
  *  @param target Delegate target object
  *
