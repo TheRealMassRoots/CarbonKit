@@ -97,6 +97,23 @@
     return self;
 }
 
+- (instancetype)initWithItems:(nullable NSArray *)items
+				 initialIndex:(NSInteger)initialIndex
+					 delegate:(nonnull id)target {
+	selectedIndex = initialIndex;
+	self.delegate = target;
+	self.viewControllers = [NSMutableDictionary new];
+	
+	[self createSegmentedToolbar];
+	[self createTabSwipeScrollViewWithItems:items];
+	[self addToolbarIntoSuperview];
+	[self createPageViewController];
+	
+	[self loadFirstViewController];
+	
+	return self;
+}
+
 - (instancetype)initWithItems:(NSArray *)items toolBar:(UIToolbar *)toolBar delegate:(id)target {
     selectedIndex = 0;
     self.delegate = target;
